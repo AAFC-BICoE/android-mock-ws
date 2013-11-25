@@ -13,16 +13,15 @@ export CLASSPATH=target/android-mock-ws-1.0-SNAPSHOT-jar-with-dependencies.jar
 java ca.gc.agr.mbb.androidmockws.AndroidMockWS
 ```
 
-Starts web server on port 4567
+Starts web server on port `4567`
 
 URLs to try:
 
-##Get all specimen replicates
+##Get all specimen replicate GET URIs
 ```
 http://localhost:4567/v1/specimenReplicate/
 
 ```
-
 This should result in something like:
 
 ```
@@ -39,7 +38,7 @@ This should result in something like:
 
 }
 ```
-##Get ne specimen replicate
+##Get a specimen replicate record
 Now, use one of the above to get the full record:
 ```
 http://localhost:4567/v1/specimenReplicate/19249
@@ -70,3 +69,11 @@ Should result in something like:
     "type": "specimenReplicates",
     "count": 5
 }
+
+
+TODO
+=====
+1. Command line set port number
+2. POST/PUT for specimen replicate
+3. Add version to json returned
+4. implement one or two other seqdb objects
