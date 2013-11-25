@@ -64,7 +64,7 @@ Should result in something like:
     "type": "specimenReplicates",
     "count": 5
 }
-
+```
 
 TODO
 =====
