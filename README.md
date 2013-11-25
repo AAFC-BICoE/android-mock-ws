@@ -18,10 +18,8 @@ Starts web server on port `4567`
 URLs to try:
 
 ##Get all specimen replicate GET URIs
-```
-[http://localhost:4567/v1/specimenReplicate/](http://localhost:4567/v1/specimenReplicate/)
+URL: http://localhost:4567/v1/specimenReplicate/
 
-```
 This should result in something like:
 
 ```
@@ -40,8 +38,7 @@ This should result in something like:
 ```
 ##Get a specimen replicate record
 Now, use one of the above to get the full record:
-```
-[http://localhost:4567/v1/specimenReplicate/19249]{http://localhost:4567/v1/specimenReplicate/19249)
+URL: http://localhost:4567/v1/specimenReplicate/19249
 
 ```
 Should result in something like:
@@ -59,8 +56,7 @@ Should result in something like:
 ```
 
 ##Get count of specimen replicates
-```
-[http://localhost:4567/v1/specimenReplicate/count/](http://localhost:4567/v1/specimenReplicate/count/)
+URL: http://localhost:4567/v1/specimenReplicate/count/
 
 ```
 Should result in something like:
