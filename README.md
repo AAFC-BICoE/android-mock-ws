@@ -40,7 +40,6 @@ This should result in something like:
 Now, use one of the above to get the full record:
 URL: http://localhost:4567/v1/specimenReplicate/19249
 
-```
 Should result in something like:
 ```
 {
@@ -58,7 +57,7 @@ Should result in something like:
 ##Get count of specimen replicates
 URL: http://localhost:4567/v1/specimenReplicate/count/
 
-```
+
 Should result in something like:
 ```
 {
