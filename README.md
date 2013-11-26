@@ -34,7 +34,7 @@ Should result in something like:
 ```
 {
     "type": "specimenReplicates",
-    "count": 5
+    "count": 9992
 }
 ```
 
@@ -87,7 +87,7 @@ Should result in something like:
     "notes": "qrkhfmyqyemch tltg z",
     "storageMedium": "minm sg t owioggbbuf",
     "startDate": "2010-01-05 10:02:12",
-    "revivialDate": "2014-08-01 01:54:12",
+    "revivalDate": "2014-08-01 01:54:12",
     "dateDestroyed": "2010-07-18 04:46:12",
     "parent": "http://localhost:4567/v1/specimenReplicate/764673",
     "location": {

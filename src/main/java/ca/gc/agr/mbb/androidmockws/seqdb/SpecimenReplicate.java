@@ -15,7 +15,7 @@ public class SpecimenReplicate implements SeqObj{
     public String storageMedium = Util.makeRandomString(20, true);
 
     public String startDate = Util.randomDate(0);
-    public String revivialDate = Util.randomDate(-4);
+    public String revivalDate = Util.randomDate(-4);
     public String dateDestroyed = Util.randomDate(0,45f);
 
     public String parent;
