@@ -1,3 +1,8 @@
+
+What
+=====
+- Mock web service that randomly populates random number of SpecimenReplicate records.
+
 Build
 ======
 
@@ -20,8 +25,22 @@ Starts web server on port `4567`
 URLs to try
 ============
 
+##Get count of specimen replicates
+URL: `http://localhost:4567/v1/specimenReplicate/count/`
+ (Note trailing slash)
+
+
+Should result in something like:
+```
+{
+    "type": "specimenReplicates",
+    "count": 5
+}
+```
+
+
 ##Get all specimen replicate GET URIs
-URL: http://localhost:4567/v1/specimenReplicate/
+URL: `http://localhost:4567/v1/specimenReplicate/`
 
 This should result in something like:
 
@@ -52,14 +71,14 @@ This should result in something like:
 }
 
 ```
-##Get a specimen replicate record
+##Get a single specimen replicate record by primary key
 Now, use one of the above to get the full record:
-URL: http://localhost:4567/v1/specimenReplicate/19249
+URL: (http://localhost:4567/v1/specimenReplicate/941756)[http://localhost:4567/v1/specimenReplicate/941756]
 
 Should result in something like:
 ```
 {
-    "primaryKey": 154261,
+    "primaryKey": 941756,
     "name": "mbyfolp",
     "state": "xmbjptcnkuhv",
     "specimenIdentifier": 77596,
@@ -84,17 +103,6 @@ Should result in something like:
 }
 ```
 
-##Get count of specimen replicates
-URL: http://localhost:4567/v1/specimenReplicate/count/
-
-
-Should result in something like:
-```
-{
-    "type": "specimenReplicates",
-    "count": 5
-}
-```
 
 TODO
 =====

@@ -45,7 +45,7 @@ public class AndroidMockWS {
 	/////////////
 	// Specimen Replicates
 	// get count
-	thisRoute = SPECIMEN_REPLICATE_PATH + "/" + COUNT;
+	thisRoute = SPECIMEN_REPLICATE_PATH + "/" + COUNT + "/";
 	get(new Route(thisRoute) {
 		@Override
 		public Object handle(Request request, Response response) {
