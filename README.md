@@ -25,6 +25,45 @@ Starts web server on port `4567`
 URLs to try
 ============
 
+## List all available URLs (including explicit failure URLs
+URL: `http://localhost:4567/v1`
+[
+
+    {
+        "description": "container",
+        "path": "/v1/container",
+        "url": "http://localhost:4567/v1/container"
+    },
+    {
+        "description": "container count",
+        "path": "/v1/container/count/",
+        "url": "http://localhost:4567/v1/container/count/"
+    },
+    {
+        "description": "location",
+        "path": "/v1/location",
+        "url": "http://localhost:4567/v1/location"
+    },
+.
+.
+. [content removed]
+.
+.
+    {
+        "description": "storage count",
+        "url": "http://localhost:4567/v1/storage/count/?FORCE_TEST_HTTP_RESPONSE=400"
+    },
+    {
+        "description": "storage count",
+        "url": "http://localhost:4567/v1/storage/count/?FORCE_TEST_HTTP_RESPONSE=404"
+    },
+    {
+        "description": "storage count",
+        "url": "http://localhost:4567/v1/storage/count/?FORCE_TEST_HTTP_RESPONSE=405"
+    }
+
+]
+
 ##Get count of specimen replicates
 URL: `http://localhost:4567/v1/specimenReplicate/count/`
  (Note trailing slash)
