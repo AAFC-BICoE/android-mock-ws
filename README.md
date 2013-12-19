@@ -25,8 +25,10 @@ Starts web server on port `4567`
 URLs to try
 ============
 
-## List all available URLs (including explicit failure URLs
+## List all available URLs (including explicit failure URLs)
 URL: `http://localhost:4567/v1`
+
+```
 [
 
     {
@@ -63,6 +65,7 @@ URL: `http://localhost:4567/v1`
     }
 
 ]
+```
 
 ##Get count of specimen replicates
 URL: `http://localhost:4567/v1/specimenReplicate/count/`
