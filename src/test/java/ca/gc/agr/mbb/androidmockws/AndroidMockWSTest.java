@@ -30,7 +30,7 @@ public class AndroidMockWSTest
 
 
     @After
-    public static void tearDown() {
+    public void tearDown() {
 	ss.stop();
     }
     

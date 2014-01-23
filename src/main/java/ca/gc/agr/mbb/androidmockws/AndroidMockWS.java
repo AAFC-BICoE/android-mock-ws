@@ -61,14 +61,14 @@ public class AndroidMockWS {
     public static final String SPECIMEN_REPLICATE = "specimenReplicate";
     public static final String STORAGE="storage";
 
-    //PATHS
-    public static final String CONTAINER_PATH = makePath(CONTAINER);
-    public static final String LOCATION_PATH = makePath(LOCATION);
-    public static final String MIXED_SPECIMEN_PATH = makePath(MIXED_SPECIMEN);
-    public static final String PCR_PRIMER_PATH = makePath(PCR_PRIMER);
-    public static final String SAMPLE_PATH = makePath(SAMPLE);
+    //PATHS - make all services
+    public static final String CONTAINER_PATH = makePath(CONTAINER, false);
+    public static final String LOCATION_PATH = makePath(LOCATION, false);
+    public static final String MIXED_SPECIMEN_PATH = makePath(MIXED_SPECIMEN, false);
+    public static final String PCR_PRIMER_PATH = makePath(PCR_PRIMER, false);
+    public static final String SAMPLE_PATH = makePath(SAMPLE, false);
     public static final String SPECIMEN_REPLICATE_PATH = makePath(SPECIMEN_REPLICATE);
-    public static final String STORAGE_PATH = makePath(STORAGE);
+    public static final String STORAGE_PATH = makePath(STORAGE, false);
 
 
     public static final String PAGING_OFFSET="offset";
@@ -150,6 +150,7 @@ public class AndroidMockWS {
 		    for(Service s: services){
 			for (Integer key : HTTP_STATUS_URL_MAP.keySet()){
 			    Service force = new Service(s);
+			    force.isWorking = true;
 			    force.url = force.url + "?" + FORCE_TEST_HTTP_RESPONSE + "=" + key;
 			    forceServices.add(force);
 			}
@@ -169,7 +170,7 @@ public class AndroidMockWS {
 		@Override
 		public Object handle(Request request, Response response) {
 		    response.type(RESPONSE_TYPE);
-		    // .. Show something ..
+
 		    System.err.println("*GET: count" + request.pathInfo());
 
 		    return "{ "
@@ -187,7 +188,7 @@ public class AndroidMockWS {
 		public Object handle(Request request, Response response) {
 		    response.type(RESPONSE_TYPE);
 		    Gson gson = new Gson();
-		    // .. Show something ..
+
 		    System.err.println("*GET: " + request.pathInfo());
 		    StringBuilder sb = new StringBuilder();
 		    final int size = specimenReplicates.size();
@@ -467,13 +468,17 @@ public class AndroidMockWS {
     }
 
     static final String makePath(final String suffix){
+	return makePath(suffix, true);
+    }
+
+    static final String makePath(final String suffix, final boolean isWorking){
 	String path = PATH_BASE + "/" + suffix;
 	nounPathMap.put(suffix, path);
-	Service service = new Service(suffix, path);
+	Service service = new Service(suffix, path, isWorking);
 	services.add(service);
 
 	//counter url
-	service = new Service(suffix + " count", makeCountPath(path));
+	service = new Service(suffix + " count", makeCountPath(path), isWorking);
 	services.add(service);
 	return path;
     }
